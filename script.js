@@ -16,12 +16,14 @@ function getComputerChoice() {
 function getHumanChoice() {
   let userChoice = prompt("Choose between rock/paper/scissors: ");
 
-  if(userChoice == "rock") {
+  if(userChoice == "rock" || userChoice == "Rock") {
     return "rock";
-  } else if(userChoice == "paper") {
+  } else if(userChoice == "paper" || userChoice == "Paper") {
     return "paper";
-  } else if(userChoice == "scissors") {
+  } else if(userChoice == "scissors" || userChoice == "Scissors") {
     return "scissors";
+  } else {
+    return "Invalid choice!"
   }
 }
 
