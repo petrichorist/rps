@@ -23,7 +23,7 @@ function getHumanChoice() {
   } else if(userChoice == "scissors" || userChoice == "Scissors") {
     return "scissors";
   } else {
-    return "Invalid choice!"
+    return "Invalid choice!";
   }
 }
 
