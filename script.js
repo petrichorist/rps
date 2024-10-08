@@ -44,26 +44,38 @@ function playGame() {
       humanScore += 1;
       console.log(`You WIN! ${humanChoice} beats ${computerChoice}.`);
     } else if(humanChoice == "rock" && computerChoice == "rock") {
-      console.log("It's a DRAW!");
+      console.log("DRAW!");
     } else if(humanChoice == "paper" && computerChoice == "rock") {
       humanScore += 1;
       console.log(`You WIN! ${humanChoice} beats ${computerChoice}.`);
     } else if(humanChoice == "paper" && computerChoice == "paper") {
-      console.log("It's a DRAW!");
+      console.log("DRAW!");
     }  else if(humanChoice == "scissors" && computerChoice == "paper") {
       humanScore += 1;
       console.log(`You WIN! ${humanChoice} beats ${computerChoice}.`);
     } else if(humanChoice == "scissors" && computerChoice == "scissors") {
-      console.log("It's a DRAW!");
+      console.log("DRAW!");
     } else {
       computerScore += 1;
-      console.log(`You LOSE! ${computerChoice} beats ${humanChoice}.`)
+      console.log(`You LOSE! ${computerChoice} beats ${humanChoice}.`);
     }
 
     roundNum += 1;
+
+    if (roundNum == 5) {
+      if(humanScore < computerScore) {
+        console.log("You lost the match! Try again.");
+      } else if (humanScore == computerScore) {
+        console.log("It's a draw!");
+      } else {
+        console.log("You won! Congratulations. :)");
+      }
+    }
   }
 
   playRound();
 }
 
-playGame();
+while(roundNum < 5) {
+  playGame();
+}
