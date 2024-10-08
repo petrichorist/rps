@@ -30,9 +30,6 @@ function getComputerChoice() {
   }
 }
 
-console.log(getHumanChoice());
-console.log(getComputerChoice());
-
 let roundNum = 0;
 
 function playGame() {
@@ -40,6 +37,9 @@ function playGame() {
   let computerScore = 0;
 
   function playRound(humanChoice, computerChoice) {
+    humanChoice = getHumanChoice();
+    computerChoice = getComputerChoice();
+
     if(humanChoice == "rock" && computerChoice == "scissors") {
       humanScore += 1;
       console.log(`You WIN! ${humanChoice} beats ${computerChoice}.`);
@@ -59,11 +59,11 @@ function playGame() {
       computerScore += 1;
       console.log(`You LOSE! ${computerChoice} beats ${humanChoice}.`)
     }
-    
+
     roundNum += 1;
   }
+
+  playRound();
 }
 
-while(roundNum < 5) {
-  playGame();
-}
+playGame();
