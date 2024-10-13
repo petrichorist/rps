@@ -15,7 +15,7 @@ function getHumanChoice() {
     return "rock";
   } else if (userChoice == "paper") {
     return "paper";
-  } else if (userChoice == "scissors") {
+  } else if (userChoice == "scissors" || userChoice == "scissor") {
     return "scissors";
   } else {
     return "Invalid choice!";
@@ -34,49 +34,45 @@ function getComputerChoice() {
   }
 }
 
-function playGame() {
-  function playRound(humanChoice, computerChoice) {
-    humanChoice = getHumanChoice();
-    computerChoice = getComputerChoice();
+function playRound(humanChoice, computerChoice) {
+  humanChoice = getHumanChoice();
+  computerChoice = getComputerChoice();
 
-    if (humanChoice == "rock" && computerChoice == "scissors") {
-      console.log(`You WIN! ${humanChoice} beats ${computerChoice}.`);
-      humanScore += 1;
-    } else if (humanChoice == "rock" && computerChoice == "rock") {
-      console.log("DRAW!");
-    } else if (humanChoice == "paper" && computerChoice == "rock") {
-      console.log(`You WIN! ${humanChoice} beats ${computerChoice}.`);
-      humanScore += 1;
-    } else if (humanChoice == "paper" && computerChoice == "paper") {
-      console.log("DRAW!");
-    } else if (humanChoice == "scissors" && computerChoice == "paper") {
-      console.log(`You WIN! ${humanChoice} beat ${computerChoice}.`);
-      humanScore += 1;
-    } else if (humanChoice == "scissors" && computerChoice == "scissors") {
-      console.log("DRAW!");
-    } else {
-      console.log(`You LOSE! ${computerChoice} beats ${humanChoice}.`);
-      computerScore += 1;
-    }
-
-    roundNum += 1;
-
-    if (roundNum == 5) {
-      if (humanScore < computerScore) {
-        console.log("You lost the match! Try again.");
-      } else if (humanScore == computerScore) {
-        console.log("It's a draw!");
-      } else {
-        console.log("You won! Congratulations. :)");
-      }
-
-      console.log(`Final score: ${humanScore} - ${computerScore}`);
-    }
+  if (humanChoice == "rock" && computerChoice == "scissors") {
+    console.log(`You WIN! ${humanChoice} beats ${computerChoice}.`);
+    humanScore += 1;
+  } else if (humanChoice == "rock" && computerChoice == "rock") {
+    console.log("DRAW!");
+  } else if (humanChoice == "paper" && computerChoice == "rock") {
+    console.log(`You WIN! ${humanChoice} beats ${computerChoice}.`);
+    humanScore += 1;
+  } else if (humanChoice == "paper" && computerChoice == "paper") {
+    console.log("DRAW!");
+  } else if (humanChoice == "scissors" && computerChoice == "paper") {
+    console.log(`You WIN! ${humanChoice} beat ${computerChoice}.`);
+    humanScore += 1;
+  } else if (humanChoice == "scissors" && computerChoice == "scissors") {
+    console.log("DRAW!");
+  } else {
+    console.log(`You LOSE! ${computerChoice} beats ${humanChoice}.`);
+    computerScore += 1;
   }
 
-  playRound();
+  roundNum += 1;
+
+  if (roundNum == 5) {
+    if (humanScore < computerScore) {
+      console.log("You lost the match! Try again.");
+    } else if (humanScore == computerScore) {
+      console.log("It's a draw!");
+    } else {
+      console.log("You won! Congratulations. :)");
+    }
+
+    console.log(`Final score: ${humanScore} - ${computerScore}`);
+  }
 }
 
 while (roundNum < 5) {
-  playGame();
+  playRound();
 }
