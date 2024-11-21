@@ -1,2 +1,2 @@
-# odin-rps
-A console-based rock-paper-scissors (rps) game written in JavaScript.
+# INFO
+A rock-paper-scissors game written in JavaScript (NOW WITH A FULLY-FLEDGED UI!!).
