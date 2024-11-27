@@ -24,8 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (playerScore == 5) {
         result.textContent = 'Player wins!';
       } else if (computerScore == 5) {
-        result.textContent =
-          `Computer wins!`;
+        result.textContent = `Computer wins!`;
       } else if (playerSelection == 'rock' && computerSelection == 'scissors') {
         result.textContent = `You WIN! ${playerSelection} beats ${computerSelection}.`;
         playerScore++;
