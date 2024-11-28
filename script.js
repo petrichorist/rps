@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
   let computerSelection = choices[Math.floor(Math.random() * 3)];
 
   const result = document.querySelector('.result');
+  const clickBtn = document.querySelector('.clickBtn');
   const rock = document.querySelector('#rock');
   const paper = document.querySelector('#paper');
   const scissors = document.querySelector('#scissors');
@@ -26,6 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function reveal() {
+    clickBtn.classList.add('hidden');
     result.classList.remove('hidden');
     result.classList.add('reveal');
   }
@@ -87,6 +89,7 @@ document.addEventListener('DOMContentLoaded', () => {
     hScore.textContent = playerScore;
     cScore.textContent = computerScore;
 
+    clickBtn.classList.remove('hidden');
     result.classList.add('hidden');
     result.textContent = '';
   });

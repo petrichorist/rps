@@ -26,35 +26,36 @@ p {
   margin: 2px;
 }
 
+.clickBtn,
 .result {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #e0e0e0;
+  color: #ffffff;
   background-color: #000000b0;
   border-radius: 8px;
-  width: 270px;
-  height: 70px;
-  padding: 5px;
-  font-size: 20px;
+  width: 295px;
+  height: 80px;
+  padding: 10px;
+  font-size: 24px;
   text-wrap: wrap;
   margin-bottom: 10px;
 }
-
 
 .scoreContainer {
   display: flex;
   flex-direction: row;
   gap: 15px;
-  font-size: 30px;
+  font-size: 50px;
 }
 
 .reveal {
-  opacity: .8;
+  opacity: 1;
   transition: opacity 0.5s ease-in;
 }
 
 .hidden {
+  opacity: 0;
   display: none;
 }
 
