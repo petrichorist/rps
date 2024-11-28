@@ -14,7 +14,7 @@ body {
 }
 
 button {
-  font-size: 25px;
+  font-size: 4em;
   height: 100px;
   width: 100px;
   margin: 2px;
@@ -22,13 +22,11 @@ button {
   border-radius: 4px;
 }
 
-#rock,
-#paper,
-#scissors {
-  font-size: 60px;
+p {
+  margin: 2px;
 }
 
-#result {
+.result {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -43,9 +41,6 @@ button {
   margin-bottom: 10px;
 }
 
-p {
-  margin: 2px;
-}
 
 .scoreContainer {
   display: flex;
@@ -54,10 +49,17 @@ p {
   font-size: 30px;
 }
 
+.reveal {
+  opacity: .8;
+  transition: opacity 0.5s ease-in;
+}
+
+.hidden {
+  display: none;
+}
+
 #again {
-  height: 50px;
-  width: 100px;
-  margin-top: 25px;
+  background: none;
 }
 
 footer {
