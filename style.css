@@ -7,22 +7,42 @@ body {
   margin: 0;
 }
 
+#buttons {
+  padding-bottom: 15px;
+}
+
 button {
-  font-family: DS-Digital;
-  font-size: 16px;
-  height: 40px;
-  width: 60px;
+  font-size: 25px;
+  height: 65px;
+  width: 65px;
   margin: 2px;
   border: none;
   border-radius: 4px;
 }
 
-#buttons {
-  padding-bottom: 10px;
+#rock,
+#paper,
+#scissors {
+  font-size: 40px;
+}
+
+#result {
+  font-size: 30px;
+  margin-bottom: 10px;
 }
 
 p {
   margin: 2px;
+}
+
+#label {
+  font-size: 30px;
+}
+
+#again {
+  height: 50px;
+  width: 100px;
+  margin-top: 25px;
 }
 
 footer {
