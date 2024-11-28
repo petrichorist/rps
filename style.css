@@ -3,6 +3,8 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  text-align: center;
+  text-wrap: nowrap;
   height: 100vh;
   margin: 0;
 }
@@ -13,8 +15,8 @@ body {
 
 button {
   font-size: 25px;
-  height: 65px;
-  width: 65px;
+  height: 100px;
+  width: 100px;
   margin: 2px;
   border: none;
   border-radius: 4px;
@@ -23,11 +25,21 @@ button {
 #rock,
 #paper,
 #scissors {
-  font-size: 40px;
+  font-size: 60px;
 }
 
 #result {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #e0e0e0;
+  background-color: #000000b0;
+  border-radius: 8px;
+  width: 270px;
+  height: 70px;
+  padding: 5px;
   font-size: 20px;
+  text-wrap: wrap;
   margin-bottom: 10px;
 }
 
@@ -37,6 +49,7 @@ p {
 
 .scoreContainer {
   display: flex;
+  flex-direction: row;
   gap: 15px;
   font-size: 30px;
 }

@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
         computerScore++;
         cScore.textContent = computerScore;
         if (computerScore == 5) {
-          result.textContent = `Computer wins! Try again?`;
+          result.textContent = `Computer wins! Try again.`;
           disableBtns(true);
         }
       }
