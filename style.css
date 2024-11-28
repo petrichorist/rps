@@ -27,7 +27,7 @@ button {
 }
 
 #result {
-  font-size: 25px;
+  font-size: 20px;
   margin-bottom: 10px;
 }
 
@@ -35,7 +35,9 @@ p {
   margin: 2px;
 }
 
-#label {
+.scoreContainer {
+  display: flex;
+  gap: 15px;
   font-size: 30px;
 }
 

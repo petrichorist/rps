@@ -19,33 +19,36 @@ document.addEventListener('DOMContentLoaded', () => {
     computerSelection = choices[Math.floor(Math.random() * 3)];
   }
 
+  function disableBtns(bool) {
+    rock.disabled = bool;
+    paper.disabled = bool;
+    scissors.disabled = bool;
+  }
+
   function playGame(pick) {
     function playRound(playerSelection, computerSelection) {
-      if (playerScore == 5) {
-        result.textContent = 'Player wins!';
-      } else if (computerScore == 5) {
-        result.textContent = `Computer wins!`;
-      } else if (playerSelection == 'rock' && computerSelection == 'scissors') {
-        result.textContent = `You WIN! ${playerSelection} beats ${computerSelection}.`;
-        playerScore++;
-        hScore.textContent = playerScore;
-      } else if (playerSelection == 'paper' && computerSelection == 'rock') {
-        result.textContent = `You WIN! ${playerSelection} beats ${computerSelection}.`;
-        playerScore++;
-        hScore.textContent = playerScore;
-      } else if (
-        playerSelection == 'scissors' &&
-        computerSelection == 'paper'
+      if (
+        (playerSelection == 'rock' && computerSelection == 'scissors') ||
+        (playerSelection == 'paper' && computerSelection == 'rock') ||
+        (playerSelection == 'scissors' && computerSelection == 'paper')
       ) {
-        result.textContent = `You WIN! ${playerSelection} beat ${computerSelection}.`;
+        result.textContent = `You WIN! ${playerSelection} beats ${computerSelection}.`;
         playerScore++;
         hScore.textContent = playerScore;
+        if (playerScore == 5) {
+          result.textContent = 'Player wins!';
+          disableBtns(true);
+        }
       } else if (playerSelection == computerSelection) {
         result.textContent = `It's a DRAW! You both chose to play... ${playerSelection}`;
       } else {
         result.textContent = `You LOSE! ${computerSelection} beats ${playerSelection}.`;
         computerScore++;
         cScore.textContent = computerScore;
+        if (computerScore == 5) {
+          result.textContent = `Computer wins! Try again?`;
+          disableBtns(true);
+        }
       }
     }
 
@@ -56,10 +59,12 @@ document.addEventListener('DOMContentLoaded', () => {
     playGame('rock');
     computerChoice();
   });
+
   paper.addEventListener('click', () => {
     playGame('paper');
     computerChoice();
   });
+
   scissors.addEventListener('click', () => {
     playGame('scissors');
     computerChoice();
@@ -68,6 +73,9 @@ document.addEventListener('DOMContentLoaded', () => {
   again.addEventListener('click', () => {
     playerScore = 0;
     computerScore = 0;
+
+    disableBtns(false);
+
     hScore.textContent = playerScore;
     cScore.textContent = computerScore;
 
