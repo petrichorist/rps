@@ -12,8 +12,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const scissors = document.querySelector('#scissors');
   const again = document.querySelector('#again');
 
-  const hScore = document.querySelector('.human-score');
-  const cScore = document.querySelector('.computer-score');
+  const hScore = document.querySelector('#human-score');
+  const cScore = document.querySelector('#computer-score');
 
   function computerChoice() {
     computerSelection = choices[Math.floor(Math.random() * 3)];
