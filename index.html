@@ -10,22 +10,31 @@
   </head>
 
   <body>
-    <div id="buttons">
-      <button id="rock">🪨</button>
-      <button id="paper">💶</button>
-      <button id="scissors">✂</button>
+    <div class="container">
+      <div class="buttons">
+        <button id="rock">🪨</button>
+        <button id="paper">💶</button>
+        <button id="scissors">✂</button>
+      </div>
+
+      <div class="clickBtn">Choose an option to begin the game...</div>
+
+      <div class="result hidden"></div>
+
+      <div class="scoreContainer">
+        <div class="columnContainer">
+          <span id="human-object"></span>
+          <p>👨<span id="human-score">0</span></p>
+        </div>
+
+        <div class="columnContainer">
+          <span id="computer-object"></span>
+          <p>🤖<span id="computer-score">0</span></p>
+        </div>
+      </div>
+
+      <button class="again">🔁</button>
     </div>
-
-    <div class="clickBtn">Choose an option to <br> begin the game...</div>
-
-    <div class="result hidden"></div>
-
-    <div class="scoreContainer">
-      <p>👨 <span id="human-score">0</span></p>
-      <p>🤖 <span id="computer-score">0</span></p>
-    </div>
-
-    <button id="again">🔁</button>
 
     <footer>© 2024, petrichorist</footer>
   </body>
