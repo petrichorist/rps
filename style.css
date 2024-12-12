@@ -74,7 +74,6 @@ footer {
   display: flex;
   flex-direction: row;
   gap: 15px;
-  margin: 8px;
   font-size: 3.5rem;
 }
 
