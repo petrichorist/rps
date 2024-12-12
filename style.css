@@ -50,7 +50,7 @@ footer {
 .buttons {
   display: flex;
   gap: 8px;
-  margin-bottom: 24px;
+  margin: 0 0 18px;
 }
 
 .clickBtn,
