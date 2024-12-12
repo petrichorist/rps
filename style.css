@@ -45,14 +45,13 @@ footer {
 .container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   text-align: center;
 }
 
 .buttons {
   display: flex;
-  gap: 12px;
+  gap: 8px;
   margin-bottom: 24px;
 }
 
