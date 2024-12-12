@@ -133,6 +133,7 @@ again.addEventListener('click', () => {
   cObj.textContent = '';
 
   clickBtn.classList.remove('hidden');
+  result.classList.remove('reveal');
   result.classList.add('hidden');
   result.textContent = '';
 });
