@@ -36,6 +36,16 @@ function reveal() {
   result.classList.add('reveal');
 }
 
+function displayChoice(choice, object) {
+  if (choice === 'rock') {
+    object.textContent = '🪨';
+  } else if (choice === 'paper') {
+    object.textContent = '💶';
+  } else if (choice === 'scissors') {
+    object.textContent = '✂';
+  }
+}
+
 function playGame(pick) {
   hObj.textContent = '';
   cObj.textContent = '';
@@ -50,21 +60,8 @@ function playGame(pick) {
       playerScore++;
       hScore.textContent = playerScore;
 
-      if (playerSelection === 'rock') {
-        hObj.textContent = '🪨';
-      } else if (playerSelection === 'paper') {
-        hObj.textContent = '💶';
-      } else if (playerSelection === 'scissors') {
-        hObj.textContent = '✂';
-      }
-
-      if (computerSelection === 'rock') {
-        cObj.textContent = '🪨';
-      } else if (computerSelection === 'paper') {
-        cObj.textContent = '💶';
-      } else if (computerSelection === 'scissors') {
-        cObj.textContent = '✂';
-      }
+      displayChoice(playerSelection, hObj);
+      displayChoice(computerSelection, cObj);
 
       if (playerScore == 5) {
         result.textContent = 'Player wins!';
@@ -72,29 +69,19 @@ function playGame(pick) {
       }
     } else if (playerSelection == computerSelection) {
       result.textContent = `It's a DRAW! You both chose to play... ${playerSelection}`;
+
+      displayChoice(playerSelection, hObj);
+      displayChoice(computerSelection, cObj);
     } else {
       result.textContent = `You LOSE! ${computerSelection} beats ${playerSelection}.`;
       computerScore++;
       cScore.textContent = computerScore;
 
-      if (playerSelection === 'rock') {
-        hObj.textContent = '🪨';
-      } else if (playerSelection === 'paper') {
-        hObj.textContent = '💶';
-      } else if (playerSelection === 'scissors') {
-        hObj.textContent = '✂';
-      }
-
-      if (computerSelection === 'rock') {
-        cObj.textContent = '🪨';
-      } else if (computerSelection === 'paper') {
-        cObj.textContent = '💶';
-      } else if (computerSelection === 'scissors') {
-        cObj.textContent = '✂';
-      }
+      displayChoice(playerSelection, hObj);
+      displayChoice(computerSelection, cObj);
 
       if (computerScore == 5) {
-        result.textContent = `Computer wins! Try again.`;
+        result.textContent = 'Computer wins! Try again.';
         disableBtns(true);
       }
     }
@@ -131,9 +118,9 @@ again.addEventListener('click', () => {
   cScore.textContent = computerScore;
   hObj.textContent = '';
   cObj.textContent = '';
+  result.textContent = '';
 
   clickBtn.classList.remove('hidden');
   result.classList.remove('reveal');
   result.classList.add('hidden');
-  result.textContent = '';
 });
